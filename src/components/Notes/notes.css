@@ -31,3 +31,11 @@ li {
   align-items: center;
   cursor: pointer;
 }
+@media screen and (max-width: 640px) {
+  .notes-container {
+    width: 130%;
+  }
+  .bottom-container {
+    width: 90%;
+  }
+}

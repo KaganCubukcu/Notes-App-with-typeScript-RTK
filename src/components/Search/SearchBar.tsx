@@ -11,12 +11,12 @@ const SearchBar: React.FC = () => {
     dispatch(updateSearchText(text));
   };
   return (
-    <div>
+    <div className="search-bar">
       <input
         type="text"
         placeholder="Search notes"
         style={{
-          width: 500,
+          width: 300,
           height: 50,
           marginTop: 20,
           borderRadius: 8,
