@@ -26,7 +26,7 @@ const NotesApp: React.FC = () => {
           style={{
             position: "absolute",
             top: 35,
-            left: 180,
+            left: 50,
             cursor: "pointer",
           }}
           onClick={() => navitage("/")}
