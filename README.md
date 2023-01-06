@@ -2,6 +2,8 @@
 
 A React application written in TypeScript with features including Redux toolkit, Redux persist, and react-router-dom. The project consists of a landing page and a note app.
 
+## Live Address: https://notes-app-with-typescript-rtk.vercel.app/
+
 ## Features
 
 - Take and organize your notes with the note app
