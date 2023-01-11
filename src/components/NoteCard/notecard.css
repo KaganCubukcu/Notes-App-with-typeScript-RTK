@@ -16,13 +16,18 @@
   display: table;
 }
 .card-content-delete-button {
-  background-color: red;
-  border: 1px solid red;
-  border-radius: 10px;
-  padding: 10px;
   margin-top: 20px;
   width: 30%;
   cursor: pointer;
+}
+.remove-button {
+  padding: 2px;
+}
+.remove-button:hover {
+  background-color: red;
+  border: 1px solid red;
+  border-radius: 8px;
+  transition: 800ms;
 }
 .card-container {
   display: grid;
@@ -37,4 +42,30 @@
   .card-container {
     grid-template-columns: repeat(1, 1fr);
   }
+}
+.card-button-container {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  padding: 20px 0px;
+}
+.card-content-update-button {
+  background-color: yellow;
+  border: 1px solid yellow;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 20px;
+  width: 30%;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: yellow;
+  border: 1px solid yellow;
+  border-radius: 8px;
+  transition: 800ms;
+}
+.save-button {
+  background: none;
+  border: none;
 }
