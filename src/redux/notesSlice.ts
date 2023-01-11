@@ -38,7 +38,18 @@ const notesSlice = createSlice({
         searchText: action.payload,
       };
     },
+    updateNoteText(state, action: PayloadAction<{ id: number; text: string }>) {
+      return {
+        ...state,
+        notes: state.notes.map((note) =>
+          note.id === action.payload.id
+            ? { ...note, text: action.payload.text }
+            : note
+        ),
+      };
+    },
   },
 });
-export const { addNote, removeNote, updateSearchText } = notesSlice.actions;
+export const { addNote, removeNote, updateSearchText, updateNoteText } =
+  notesSlice.actions;
 export default notesSlice.reducer;
