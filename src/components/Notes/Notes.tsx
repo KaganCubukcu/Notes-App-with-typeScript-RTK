@@ -19,15 +19,25 @@ const Notes: React.FC<NotesProps> = ({ addNote }) => {
   const [text, setText] = useState("");
   const [color, setColor] = useState("#DEF5E5");
   const [warning, setWarning] = useState("");
+  const [warningTimeoutId, setWarningTimeoutId] = useState<number | null>(null);
 
   const dispatch = useDispatch();
 
   const handleAddNote = () => {
     if (text.length < 3) {
-      setWarning("Please enter at least 3 characters for the note");
+      if (warningTimeoutId !== null) {
+        clearTimeout(warningTimeoutId);
+      }
+      const id = setTimeout(() => setWarning(""), 2000) as any;
+      setWarningTimeoutId(id.id);
 
+      setWarning("Please enter at least 3 characters for the note");
       return;
     }
+    if (warningTimeoutId !== null) {
+      clearTimeout(warningTimeoutId);
+    }
+    setWarning("");
     dispatch(
       addNote({
         id: Date.now(),
@@ -36,7 +46,6 @@ const Notes: React.FC<NotesProps> = ({ addNote }) => {
       })
     );
     setText("");
-    setWarning("");
   };
 
   return (
@@ -48,7 +57,7 @@ const Notes: React.FC<NotesProps> = ({ addNote }) => {
       )}
 
       <textarea
-        placeholder="add notes here"
+        placeholder="Write notes here"
         style={{
           height: "30%",
           borderRadius: 8,
